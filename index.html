@@ -340,6 +340,22 @@
     }
   );
 </script>
+<script>
+const PIMARKET_API = "https://script.google.com/macros/s/AKfycbx1DwZFhc-ebajFq2CTpYR8KykKmYbNF2HbcbdgnRTUxghw5Rc9ZBrFKxatpIDcU9BY/exec";
 
+async function testPiMarketBackend() {
+  try {
+    const response = await fetch(PIMARKET_API);
+    const data = await response.json();
+    console.log("PiMarket Backend:", data);
+    return data;
+  } catch (error) {
+    console.error("Backend connection error:", error);
+    return null;
+  }
+}
+
+testPiMarketBackend();
+</script>
 </body>
 </html>
