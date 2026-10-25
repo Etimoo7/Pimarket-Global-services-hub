@@ -136,157 +136,42 @@
       margin: 10px 0;
     }
 
-    .form-section {
-      background: white;
-      padding: 22px;
-      border-radius: 10px;
-      margin-top: 30px;
-    }
-
-    .form-section input,
-    .form-section textarea,
-    .form-section select {
-      margin: 8px 0 15px;
-    }
-
-    footer {
-      background: #321047;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      margin-top: 35px;
-    }
-
-    footer a {
-      color: white;
-      margin: 5px;
-    }
-
-    @media (max-width: 480px) {
-      .hero h2 {
-        font-size: 24px;
-      }
-
-      .search-box {
-        flex-direction: column;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 5px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>🛍️ PiMarket Global</h1>
-  <p>Discover. Connect. Trade.</p>
-</header>
-
-<nav>
-  <a href="#home">Home</a>
-  <a href="#marketplace">Marketplace</a>
-  <a href="#sell">Sell</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section class="hero" id="home">
-  <h2>Your Global Marketplace</h2>
-  <p>
-    Connect with buyers and sellers, discover products and services,
-    and explore new trading opportunities in the Pi ecosystem.
-  </p>
-  <br>
-  <a class="button" href="#marketplace">Explore Marketplace</a>
-  <a class="button" href="#sell">List Your Product</a>
-</section>
-
-<main class="container">
-
-  <h2 class="section-title" id="marketplace">Explore Products</h2>
-
-  <div class="search-box">
-    <input
-      type="search"
-      id="searchInput"
-      placeholder="Search products or services..."
-      aria-label="Search products"
-    >
-    <button type="button" onclick="searchProducts()">Search</button>
-  </div>
-
-  <div class="products" id="productList">
-
-    <article class="card" data-search="electronics phones computers">
-      <div class="product-icon">📱</div>
-      <h3>Phones & Electronics</h3>
-      <p>Discover electronic products and accessories.</p>
-      <p class="price">Contact seller for price</p>
-      <a class="button" href="#contact">Enquire</a>
-    </article>
-
-    <article class="card" data-search="fashion clothes shoes bags">
-      <div class="product-icon">👕</div>
-      <h3>Fashion & Clothing</h3>
-      <p>Explore clothing, footwear and fashion accessories.</p>
-      <p class="price">Contact seller for price</p>
-      <a class="button" href="#contact">Enquire</a>
-    </article>
-
-    <article class="card" data-search="food groceries agriculture">
-      <div class="product-icon">🌾</div>
-      <h3>Food & Agriculture</h3>
-      <p>Find agricultural products and food supplies.</p>
-      <p class="price">Contact seller for price</p>
-      <a class="button" href="#contact">Enquire</a>
-    </article>
-
-    <article class="card" data-search="services repairs maintenance">
-      <div class="product-icon">🛠️</div>
-      <h3>Services</h3>
-      <p>Discover professional and technical services.</p>
-      <p class="price">Contact service provider</p>
-      <a class="button" href="#contact">Enquire</a>
-    </article>
-
-  </div>
-
-  <section class="form-section" id="sell">
-    <h2 class="section-title">Become a Seller</h2>
-    <p>
-      Interested in listing your products on PiMarket Global?
-      Fill out this form to prepare your listing enquiry.
-    </p>
-
     <form id="sellerForm">
-      <label for="sellerName">Full Name</label>
-      <input id="sellerName" name="name" required>
+  <label for="sellerName">Full Name</label>
+  <input id="sellerName" name="seller" required>
 
-      <label for="sellerEmail">Email Address</label>
-      <input id="sellerEmail" name="email" type="email" required>
+  <label for="sellerEmail">Email Address</label>
+  <input id="sellerEmail" name="email" type="email" required>
 
-      <label for="productName">Product or Service</label>
-      <input id="productName" name="product" required>
+  <label for="productName">Product or Service</label>
+  <input id="productName" name="title" required>
 
-      <label for="category">Category</label>
-      <select id="category" name="category" required>
-        <option value="">Select a category</option>
-        <option>Electronics</option>
-        <option>Fashion</option>
-        <option>Food and Agriculture</option>
-        <option>Industrial Services</option>
-        <option>Other</option>
-      </select>
+  <label for="category">Category</label>
+  <select id="category" name="category" required>
+    <option value="">Select a category</option>
+    <option value="Business">Business</option>
+    <option value="Industrial">Industrial</option>
+    <option value="Digital">Digital</option>
+  </select>
 
-      <label for="description">Product Description</label>
-      <textarea id="description" name="description" rows="4" required></textarea>
+  <label for="description">Product Description</label>
+  <textarea id="description" name="description"
+    rows="4" required></textarea>
 
-      <button type="submit">Prepare Listing Enquiry</button>
-      <p id="formMessage" role="status" aria-live="polite"></p>
-    </form>
+  <label for="price">Price (₦)</label>
+  <input id="price" name="price" type="number"
+    min="0" step="0.01" required>
+
+  <label for="location">Location</label>
+  <input id="location" name="location" required>
+
+  <label for="phone">Contact Phone Number</label>
+  <input id="phone" name="phone" type="tel" required>
+
+  <button type="submit">Submit Product</button>
+
+  <p id="formMessage" role="status" aria-live="polite"></p>
+</form>
   </section>
 
   <section class="form-section" id="contact">
