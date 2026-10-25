@@ -1,185 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#7027A0">
-  <meta name="description" content="PiMarket Global connects buyers and sellers in the Pi ecosystem.">
-  <title>PiMarket Global</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>PiMarket Global | Marketplace</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f4fa;
-      color: #292238;
-      line-height: 1.6;
-    }
+<meta name="description"
+content="PiMarket Global connects buyers, sellers, businesses and industrial service providers.">
 
-    header {
-      background: #7027a0;
-      color: white;
-      padding: 22px 15px;
-      text-align: center;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    header h1 {
-      font-size: 28px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f1fa;
+  color: #252033;
+  line-height: 1.6;
+}
 
-    header p {
-      margin-top: 5px;
-    }
+header {
+  background: #7027a0;
+  color: white;
+  padding: 22px 16px;
+  text-align: center;
+}
 
-    nav {
-      background: #4e176f;
-      padding: 12px;
-      text-align: center;
-    }
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
+header p {
+  margin: 8px 0 0;
+}
 
-    .hero {
-      padding: 45px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #7027a0, #a34be0);
-      color: white;
-    }
+nav {
+  background: #4d176f;
+  padding: 12px;
+  text-align: center;
+}
 
-    .hero h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
+nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin: 5px 10px;
+  font-weight: bold;
+}
 
-    .hero p {
-      max-width: 600px;
-      margin: auto;
-    }
+nav a:hover {
+  text-decoration: underline;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 25px 15px;
-    }
+.hero {
+  padding: 35px 18px;
+  text-align: center;
+  background: white;
+}
 
-    .search-box {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 25px;
-    }
+.hero h2 {
+  color: #7027a0;
+  font-size: 27px;
+}
 
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 7px;
-      font-size: 15px;
-    }
+.hero p {
+  max-width: 650px;
+  margin: 12px auto;
+}
 
-    button, .button {
-      background: #7027a0;
-      color: white;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 7px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 15px;
-    }
+.button {
+  display: inline-block;
+  background: #7027a0;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  border-radius: 7px;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    button:hover, .button:hover {
-      background: #4e176f;
-    }
+.button:hover {
+  background: #4d176f;
+}
 
-    .section-title {
-      margin: 15px 0;
-      color: #7027a0;
-    }
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 18px;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
+.section-title {
+  color: #7027a0;
+  margin: 18px 0;
+}
 
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    }
+.section-box {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
 
-    .product-icon {
-      font-size: 42px;
-      text-align: center;
-      padding: 12px;
-    }
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  background: white;
+}
 
-    .card h3 {
-      margin-bottom: 8px;
-    }
+label {
+  font-weight: bold;
+}
 
-    .price {
-      color: #7027a0;
-      font-weight: bold;
-      margin: 10px 0;
-    }
+textarea {
+  resize: vertical;
+}
 
-    <form id="sellerForm">
-  <label for="sellerName">Full Name</label>
-  <input id="sellerName" name="seller" required>
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
 
-  <label for="sellerEmail">Email Address</label>
-  <input id="sellerEmail" name="email" type="email" required>
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  overflow-wrap: anywhere;
+}
 
-  <label for="productName">Product or Service</label>
-  <input id="productName" name="title" required>
+.product-icon {
+  font-size: 38px;
+  text-align: center;
+}
 
-  <label for="category">Category</label>
-  <select id="category" name="category" required>
-    <option value="">Select a category</option>
-    <option value="Business">Business</option>
-    <option value="Industrial">Industrial</option>
-    <option value="Digital">Digital</option>
-  </select>
+.price {
+  color: #7027a0;
+  font-weight: bold;
+  font-size: 18px;
+}
 
-  <label for="description">Product Description</label>
-  <textarea id="description" name="description"
-    rows="4" required></textarea>
+.small-text {
+  color: #625c6c;
+  font-size: 14px;
+}
 
-  <label for="price">Price (₦)</label>
-  <input id="price" name="price" type="number"
-    min="0" step="0.01" required>
+.status-message {
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
 
-  <label for="location">Location</label>
-  <input id="location" name="location" required>
+footer {
+  background: #35104e;
+  color: white;
+  text-align: center;
+  padding: 22px 15px;
+  margin-top: 25px;
+}
 
-  <label for="phone">Contact Phone Number</label>
-  <input id="phone" name="phone" type="tel" required>
+footer p {
+  margin: 5px;
+}
 
-  <button type="submit">Submit Product</button>
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 25px;
+  }
 
-  <p id="formMessage" role="status" aria-live="polite"></p>
-</form>
+  .hero h2 {
+    font-size: 23px;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  .section-box {
+    padding: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>PiMarket Global</h1>
+  <p>Connecting Buyers, Sellers and Services</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#sell">Sell Product</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Welcome to PiMarket Global</h2>
+
+  <p>
+    Discover products, connect with sellers, promote your business
+    and find industrial and digital services in one marketplace.
+  </p>
+
+  <a class="button" href="#products">Explore Listings</a>
+  <a class="button" href="#sell">Post a Product</a>
+</section>
+
+<main>
+
+  <section class="section-box" id="products">
+    <h2 class="section-title">Marketplace Listings</h2>
+
+    <label for="searchInput">Search listings</label>
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Search products or services..."
+    >
+
+    <div id="productList" class="products">
+      <p id="loadingMessage">
+        Loading approved listings...
+      </p>
+    </div>
+
+    <p class="small-text">
+      Only listings approved by the marketplace administrator
+      should appear here.
+    </p>
   </section>
 
-  <section class="form-section" id="contact">
-    <h2 class="section-title">Contact PiMarket Global</h2>
+  <section class="section-box" id="sell">
+    <h2 class="section-title">Sell on PiMarket Global</h2>
+
     <p>
-      For seller registration, partnership and marketplace enquiries,
-      contact the PiMarket Global team.
+      Complete the form below to submit your product or service
+      for review. Listings should not be considered published
+      until they have been approved.
     </p>
+
+    <form
+      id="sellerForm"
+      method="POST"
+      action="https://script.google.com/macros/s/AKfycbx1DwZFhc-ebajFq2CTpYR8KykKmYbNF2HbcbdgnRTUxghw5Rc9ZBrFKxatpIDcU9BY/exec"
+      target="submitFrame"
+    >
+
+      <label for="sellerName">Full Name</label>
+      <input
+        id="sellerName"
+        name="seller"
+        type="text"
+        maxlength="80"
+        autocomplete="name"
+        required
+      >
+
+      <label for="sellerEmail">Email Address</label>
+      <input
+        id="sellerEmail"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+      >
+
+      <label for="productName">Product or Service</label>
+      <input
+        id="productName"
+        name="title"
+        type="text"
+        maxlength="100"
+        required
+      >
+
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        <option value="">Select a category</option>
+        <option value="Business">Business</option>
+        <option value="Industrial">Industrial</option>
+        <option value="Digital">Digital</option>
+      </select>
+
+      <label for="description">Product Description</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        maxlength="1000"
+        required
+      ></textarea>
+
+      <label for="price">Price (₦)</label>
+      <input
+        id="price"
+        name="price"
+        type="number"
+        min="0"
+        step="0.01"
+        required
+      >
+
+      <label for="location">Location</label>
+      <input
+        id="location"
+        name="location"
+        type="text"
+        maxlength="100"
+        autocomplete="address-level2"
+        required
+      >
+
+      <label for="phone">Contact Phone Number</label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        maxlength="30"
+        autocomplete="tel"
+        pattern="[0-9+() -]{7,30}"
+        title="Enter a valid contact phone number."
+        required
+      >
+
+      <button class="button" type="submit">
+        Submit Product for Review
+      </button>
+
+      <p
+        id="formMessage"
+        class="status-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+    </form>
+
+    <iframe
+      name="submitFrame"
+      id="submitFrame"
+      title="Submission response"
+      hidden
+    ></iframe>
+  </section>
+
+  <section class="section-box" id="contact">
+    <h2 class="section-title">Contact PiMarket Global</h2>
+
+    <p>
+      For seller registration, partnerships and marketplace enquiries,
+      please contact the PiMarket Global team through your official
+      business contact channel.
+    </p>
+
     <p><strong>Platform:</strong> PiMarket Global</p>
     <p><strong>Marketplace:</strong> Buyers, sellers and services</p>
   </section>
@@ -189,58 +380,206 @@
 <footer>
   <p>&copy; <span id="year"></span> PiMarket Global.</p>
   <p>Connecting buyers and sellers worldwide.</p>
-  <p>Trade responsibly and verify sellers before making payments.</p>
+  <p>Verify sellers and products before making payments.</p>
 </footer>
 
 <script>
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
+"use strict";
 
-  function searchProducts() {
-    const query = document.getElementById("searchInput")
-      .value.trim().toLowerCase();
+const PIMARKET_API =
+  "https://script.google.com/macros/s/AKfycbx1DwZFhc-ebajFq2CTpYR8KykKmYbNF2HbcbdgnRTUxghw5Rc9ZBrFKxatpIDcU9BY/exec";
 
-    const cards = document.querySelectorAll("#productList .card");
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-    cards.forEach(function(card) {
-      const text = (
-        card.innerText + " " + card.dataset.search
-      ).toLowerCase();
+const form = document.getElementById("sellerForm");
+const message = document.getElementById("formMessage");
+const frame = document.getElementById("submitFrame");
 
-      card.style.display = text.includes(query) ? "" : "none";
-    });
+let submissionStarted = false;
+let submissionTimer = null;
+
+form.addEventListener("submit", function(event) {
+  if (!form.reportValidity()) {
+    event.preventDefault();
+    return;
   }
 
-  document.getElementById("searchInput").addEventListener(
-    "input", searchProducts
-  );
+  submissionStarted = true;
 
-  document.getElementById("sellerForm").addEventListener(
-    "submit", function(event) {
-      event.preventDefault();
+  message.textContent =
+    "Sending your listing for review. Please wait...";
 
-      document.getElementById("formMessage").textContent =
-        "Your form is ready, but it has not been sent. " +
-        "A backend connection is required to submit and save your listing.";
+  message.style.background = "#f1e8fa";
+  message.style.color = "#4d176f";
+
+  if (submissionTimer) {
+    clearTimeout(submissionTimer);
+  }
+
+  submissionTimer = setTimeout(function() {
+    if (submissionStarted) {
+      message.textContent =
+        "The request was sent, but its result could not be confirmed " +
+        "automatically. Please check your Google Sheet before trying again.";
     }
-  );
-</script>
-<script>
-const PIMARKET_API = "https://script.google.com/macros/s/AKfycbx1DwZFhc-ebajFq2CTpYR8KykKmYbNF2HbcbdgnRTUxghw5Rc9ZBrFKxatpIDcU9BY/exec";
+  }, 10000);
+});
 
-async function testPiMarketBackend() {
-  try {
-    const response = await fetch(PIMARKET_API);
-    const data = await response.json();
-    console.log("PiMarket Backend:", data);
-    return data;
-  } catch (error) {
-    console.error("Backend connection error:", error);
-    return null;
+frame.addEventListener("load", function() {
+  if (!submissionStarted) {
+    return;
   }
+
+  submissionStarted = false;
+
+  if (submissionTimer) {
+    clearTimeout(submissionTimer);
+  }
+
+  message.textContent =
+    "The submission request has finished. Please check your Google " +
+    "Sheet to confirm that the listing was saved with Pending status.";
+
+  message.style.background = "#fff4d6";
+  message.style.color = "#704b00";
+
+  form.reset();
+});
+
+/*
+  Load approved listings using JSONP.
+  The deployed Apps Script must support the callback parameter
+  and return an object containing a listings array.
+*/
+
+function loadApprovedListings() {
+  const productList = document.getElementById("productList");
+
+  productList.innerHTML =
+    '<p id="loadingMessage">Loading approved listings...</p>';
+
+  const callbackName =
+    "piMarketCallback_" + Date.now();
+
+  let finished = false;
+  const script = document.createElement("script");
+
+  const timeout = setTimeout(function() {
+    if (finished) return;
+
+    finished = true;
+    cleanup();
+
+    productList.textContent =
+      "Approved listings could not be loaded. The backend may need " +
+      "an updated listing endpoint.";
+  }, 10000);
+
+  function cleanup() {
+    clearTimeout(timeout);
+    script.remove();
+
+    try {
+      delete window[callbackName];
+    } catch (error) {
+      window[callbackName] = undefined;
+    }
+  }
+
+  window[callbackName] = function(data) {
+    if (finished) return;
+
+    finished = true;
+    cleanup();
+
+    if (!data || data.success !== true ||
+        !Array.isArray(data.listings)) {
+      productList.textContent =
+        "The listing service is not yet returning approved products.";
+      return;
+    }
+
+    renderListings(data.listings);
+  };
+
+  script.onerror = function() {
+    if (finished) return;
+
+    finished = true;
+    cleanup();
+
+    productList.textContent =
+      "Could not connect to the listings service. Please try again later.";
+  };
+
+  script.src = PIMARKET_API +
+    "?callback=" + encodeURIComponent(callbackName) +
+    "&_=" + Date.now();
+
+  document.body.appendChild(script);
 }
 
-testPiMarketBackend();
+function renderListings(listings) {
+  const productList = document.getElementById("productList");
+
+  productList.replaceChildren();
+
+  if (listings.length === 0) {
+    productList.textContent =
+      "No approved listings are available yet.";
+    return;
+  }
+
+  listings.forEach(function(item) {
+    const card = document.createElement("article");
+    card.className = "card";
+
+    const icon = document.createElement("div");
+    icon.className = "product-icon";
+    icon.textContent = "🛍️";
+
+    const title = document.createElement("h3");
+    title.textContent = item.title || "Product or Service";
+
+    const category = document.createElement("p");
+    category.textContent = "Category: " + (item.category || "Other");
+
+    const description = document.createElement("p");
+    description.textContent = item.description || "";
+
+    const price = document.createElement("p");
+    price.className = "price";
+    price.textContent = item.price
+      ? "₦" + item.price
+      : "Contact seller for price";
+
+    const location = document.createElement("p");
+    location.className = "small-text";
+    location.textContent = "Location: " + (item.location || "Not specified");
+
+    card.append(icon, title, category, description, price, location);
+    productList.appendChild(card);
+  });
+
+  searchProducts();
+}
+
+function searchProducts() {
+  const query = document.getElementById("searchInput")
+    .value.trim().toLowerCase();
+
+  document.querySelectorAll("#productList .card").forEach(function(card) {
+    card.style.display =
+      card.innerText.toLowerCase().includes(query) ? "" : "none";
+  });
+}
+
+document.getElementById("searchInput")
+  .addEventListener("input", searchProducts);
+
+loadApprovedListings();
 </script>
+
 </body>
 </html>
